@@ -71,6 +71,7 @@ class SearchPageHandler(webapp2.RequestHandler):
             logging.exception('search failed')
         c1 = 0
         for doc in results:
+            logging.error('DOC ' + str(c1) + ':::::')
             
             """ doc = 
             search.ScoredDocument(
@@ -80,7 +81,8 @@ class SearchPageHandler(webapp2.RequestHandler):
                 search.TextField(name=u'keywords', value=u'bad news'), 
                 search.TextField(name=u'metatheory', value=u'neutral news'), 
                 search.TextField(name=u'terms', value=u'ok news'), 
-                search.TextField(name=u'propositions', value=u'djalkjdfla cnn news djsadlfsjalfk, dfjd, jdskfjds, kajlj.')], 
+                search.TextField(name=u'propositions', 
+                    value=u'djalkjdfla cnn news djsadlfsjalfk, dfjd, jdskfjds, kajlj.')], 
             language=u'en', rank=102028823L, 
             expressions=[
                 search.HtmlField(name=u'metatheory', value=u'...<b>news</b>...'), 
